@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.niit.model.Author" table="MYAUTHOR">
+        <id name="authorID" type="int">
+            <column name="AUTHORID" />
+            <generator class="assigned" />
+        </id>
+        <property name="authorname" type="string">
+            <column name="AUTHORNAME" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" />
+        </property>
+        <property name="emailID" type="string">
+            <column name="EMAILID" />
+        </property>
+    </class>
+</hibernate-mapping>

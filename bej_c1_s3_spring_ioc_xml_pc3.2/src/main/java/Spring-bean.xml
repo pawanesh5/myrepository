@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="commuter" class="org.niit.model.Commuter">
+        <property name="commuterName" value="ramesh"/>
+        <property name="age" value="35"/>
+        <property name="location" value="gurugram"/>
+    </bean>
+
+    <bean id="cab" class="org.niit.model.Cab" scope="prototype">
+        <constructor-arg index="0" value="22012"/>
+        <constructor-arg index="1" value="gullu"/>
+        <constructor-arg index="2" value="405"/>
+        <constructor-arg index="3" value="120"/>
+        <constructor-arg index="4" ref="commuter"/>
+    </bean>
+
+
+</beans>

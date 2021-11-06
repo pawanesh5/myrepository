@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="customer" class="org.niit.model.Customer" scope="prototype">
+        <constructor-arg index="0" value="101" />
+        <constructor-arg index="1" value="gullu" />
+        <constructor-arg index="2" value="gullu@gmail.com"/>
+        <constructor-arg index="3">
+            <list>
+                <ref bean="productone"/>
+                <ref bean="producttwo"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="productone" class="org.niit.model.Product">
+        <property name="productid" value="987" />
+        <property name="productname" value="perfume" />
+        <property name="productprice" value="82" />
+    </bean>
+
+    <bean id="producttwo" class="org.niit.model.Product">
+        <property name="productid" value="986" />
+        <property name="productname" value="cleaner" />
+        <property name="productprice" value="80" />
+    </bean>
+
+</beans>

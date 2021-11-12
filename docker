@@ -1,12 +1,3 @@
-FROM openjdk
-WORKDIR usr/lib
-ENV ${MONGO_DATABASE:customerdb}
-ENV ${MONGO_URI:mongodb://localhost:27017/customerdb}
-ADD ./target/customerservice-0.0.1-SNAPSHOT.jar /usr/lib/customerservice-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","customerservice-0.0.1-SNAPSHOT.jar"]
-
-----------------------------------------------------
-
 #here openjdk is docker image for Java 11, as in pom.xml Java version is 11
 FROM openjdk
 #creating a working directory inside the image
@@ -15,24 +6,11 @@ WORKDIR usr/lib
 ENV MONGO_DATABASE=mydb
 ENV MONGO_URL=mongodb://localhost:27017/mydb
 #Copy executable jar file getting created inside target and add it in usr/lib working director
-ADD ./target/customer-0.0.1.jar /usr/lib/customer-0.0.1.jar
+ADD ./target/customer-0.0.1-SNAPSHOT.jar /usr/lib/customer-0.0.1-SNAPSHOT.jar
 #Run the jar file
-ENTRYPOINT ["java","-jar","customer-0.0.1.jar"]
+ENTRYPOINT ["java","-jar","customer-0.0.1-SNAPSHOT.jar"]
 
 
-java -jar target/spring-boot-demo-0.0.1-SNAPSHOT.jar
-dependenices--
+//where ever customer is written on that we have to write a project name which we have created 
 
 
-<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.9.2</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.9.2</version>
-		</dependency>

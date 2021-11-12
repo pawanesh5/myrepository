@@ -18,3 +18,6 @@ ENV MONGO_URL=mongodb://localhost:27017/mydb
 ADD ./target/customer-0.0.1.jar /usr/lib/customer-0.0.1.jar
 #Run the jar file
 ENTRYPOINT ["java","-jar","customer-0.0.1.jar"]
+
+
+java -jar target/spring-boot-demo-0.0.1-SNAPSHOT.jar

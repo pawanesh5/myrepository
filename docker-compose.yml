@@ -1,0 +1,22 @@
+version: '3.3'
+services:
+  
+  customerService:
+    image: customerimage
+    build: ./
+    restart: always
+    network_mode: host
+    depends_on:
+      - mongo
+    ports:
+      - 8083:8083
+  
+  mongo:
+    image: mongo:3.2-jessie
+    ports:
+     - 27017:27017
+    container_name: mongo
+    network_mode: host
+  
+
+  
